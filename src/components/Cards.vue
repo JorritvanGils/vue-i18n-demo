@@ -1,7 +1,6 @@
 <template>
 
   <div class="cards">
-    {{cards}}
 
     <Card v-bind="card" v-for="card in cards" :key="card.id" />
 
@@ -22,7 +21,7 @@ export default {
   }),
 
   created () {
-    fetch('../../public/data.json')
+    fetch('/data.json')
 
       .then(response => response.json())
 
