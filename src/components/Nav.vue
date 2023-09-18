@@ -1,22 +1,46 @@
 <template>
 
-  <div id="nav">
+  <div class="nav">
 
-    <!-- <img alt="Vue logo" src="../assets/logo-circle-sm.png" /> -->
+    <div class="nav__start">
 
-    <router-link to="/">Home</router-link>
+      <!-- <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link> -->
 
-    <router-link to="/about">About</router-link>
+      <router-link to="/">{{ $t("nav.home") }}</router-link>
+      <router-link to="/about">{{ $t("nav.about") }}</router-link>
+
+    </div>
+
+    <div class="nav__end">
+
+      <LocaleSwitcher />
+
+    </div>
 
   </div>
 
 </template>
 
-<style>
+<script>
 
-#nav {
+import LocaleSwitcher from '@/components/LocaleSwitcher'
+
+export default {
+
+  components: { LocaleSwitcher }
+
+}
+
+</script>
+
+<style scoped>
+
+.nav {
 
   display: flex;
+
+  justify-content: space-between;
 
   align-items: center;
 
@@ -24,19 +48,29 @@
 
   padding: 1rem;
 
-  color: #42b983;
+  color: #fff;
 
   background-color: #3d536a;
 
 }
 
-#nav img {
+.nav__start,
+
+.nav__end {
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+.nav img {
 
   margin-right: 1rem;
 
 }
 
-#nav a {
+.nav a {
 
   margin-right: 1.5rem;
 
