@@ -10,6 +10,8 @@
 
     </div>
 
+    <Footer />
+
   </div>
 
 </template>
@@ -17,11 +19,30 @@
 <script>
 
 import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
+import {
+  setDocumentDirectionPerLocale,
+  setDocumentLang,
+  setDocumentTitle
+} from '@/util/i18n/document'
 
 export default {
-
-  components: { Nav }
-
+  name: 'App',
+  components: { Nav, Footer },
+  mounted () {
+    this.$watch(
+      '$i18n.locale',
+      (newLocale, oldLocale) => {
+        if (newLocale === oldLocale) {
+          return
+        }
+        setDocumentLang(newLocale)
+        setDocumentDirectionPerLocale(newLocale)
+        setDocumentTitle(this.$t('app.title'))
+      },
+      { immediate: true }
+    )
+  }
 }
 
 </script>

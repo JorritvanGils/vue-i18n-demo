@@ -1,7 +1,6 @@
 <template>
 
   <div class="locale-switcher">
-    {{ $i18n.locale }}
     <select v-model="$i18n.locale">
 
       <option :value="locale.code" v-for="locale in locales" :key="locale.code">

@@ -6,7 +6,19 @@
 
     <img :src="imgUrl" />
 
-    <p>Added {{ addedOn }}</p>
+    <div class="card__footer">
+
+      <div class="card__meta">
+
+        <p class="price">{{$n(price, "currency")}}</p>
+
+        <p>{{ $d(new Date(addedOn), "short") }}</p>
+
+      </div>
+
+      <p class="likes">{{$tc("card.likes", likes)}}</p>
+
+    </div>
 
   </div>
 
@@ -22,9 +34,13 @@ export default {
 
     title: String,
 
+    price: Number,
+
     imgUrl: String,
 
-    addedOn: String
+    addedOn: String,
+
+    likes: Number
 
   }
 
@@ -70,13 +86,49 @@ img {
 
 }
 
-p {
+.card__footer {
 
   text-align: center;
 
   margin: 0;
 
   padding: 0.5em;
+
+}
+
+.card__meta {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: baseline;
+
+}
+
+p {
+
+  margin: 0;
+
+  font-size: 14px;
+
+}
+
+.price {
+
+  margin-left: 0.5rem;
+
+  font-size: 1.25rem;
+
+  font-weight: bold;
+
+}
+
+.likes {
+
+  text-align: end;
+
+  margin-top: 0.5rem;
 
 }
 

@@ -4,15 +4,16 @@
 
     <div class="nav__start">
 
-      <!-- <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link> -->
-
       <router-link to="/">{{ $t("nav.home") }}</router-link>
       <router-link to="/about">{{ $t("nav.about") }}</router-link>
 
     </div>
 
     <div class="nav__end">
+
+      <p class="user-greeting">
+        {{ $t("nav.user_greeting", { name: "Ramon" }) }}&nbsp;
+      </p>
 
       <LocaleSwitcher />
 

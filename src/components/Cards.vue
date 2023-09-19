@@ -20,38 +20,50 @@ export default {
       {
         'id': 1,
         'title': 'Battlecreek Columbia Coldono',
-        'imgUrl': '/img/battlecreek-coffee-roasters-_1wDmr4dtuk-unsplash.jpg',
-        'addedOn': '2020-01-02'
+        'price': 29.99,
+        'imgUrl': 'https://neurosciencenews.com/files/2023/06/coffee-brain-caffeine-neuroscincces.jpg',
+        'addedOn': '2020-01-02',
+        'likes': 3
       },
       {
         'id': 2,
         'title': 'Battlecreek Yirgacheffee',
-        'imgUrl': '/img/battlecreek-coffee-roasters-HvzR2yXtii4-unsplash.jpg',
-        'addedOn': '2020-01-05'
+        'price': 29.99,
+        'imgUrl': 'https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee-500x375.png',
+        'addedOn': '2020-01-05',
+        'likes': 2
       },
       {
         'id': 3,
         'title': 'Primo Passo',
-        'imgUrl': '/img/jon-tyson-KRedbshBxEk-unsplash.jpg',
-        'addedOn': '2020-01-05'
+        'price': 29.99,
+        'imgUrl': 'https://img.freepik.com/free-photo/fresh-coffee-steams-wooden-table-close-up-generative-ai_188544-8923.jpg',
+        'addedOn': '2020-01-05',
+        'likes': 5
       },
       {
         'id': 4,
         'title': 'Little Nap Brazil',
-        'imgUrl': '/img/lex-sirikiat-QouiCn7u6kw-unsplash.jpg',
-        'addedOn': '2020-01-06'
+        'price': 29.99,
+        'imgUrl': 'https://images.summitmedia-digital.com/spotph/images/2022/09/28/coffee-1-1-1664301131.jpg',
+        'addedOn': '2020-01-06',
+        'likes': 332
       },
       {
         'id': 5,
         'title': 'Little Nap Blend',
-        'imgUrl': '/img/manki-kim-mv7kxYh5Rko-unsplash.jpg',
-        'addedOn': '2020-01-07'
+        'price': 29.99,
+        'imgUrl': 'https://tracextech.com/wp-content/uploads/2022/02/coffee-traceability-solution.jpeg',
+        'addedOn': '2020-01-07',
+        'likes': 0
       },
       {
         'id': 6,
         'title': 'French Truck Peru Cajamarca',
-        'imgUrl': '/img/ryan-spaulding-_uncFvtOC-4-unsplash.jpg',
-        'addedOn': '2020-01-08'
+        'price': 29.99,
+        'imgUrl': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTeQu2f_5Y1z8Tu-xsA9X8oSD18xyingfMXA&usqp=CAU',
+        'addedOn': '2020-01-08',
+        'likes': 1
       }
     ]
 
