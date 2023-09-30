@@ -1,50 +1,46 @@
 <template>
-
   <div id="app">
-
-    <Nav />
-
-    <div class="container">
-
-      <router-view />
-
+    <div v-if="isLoading">Loading...</div>
+    <div v-else>
+      <Nav v-on:localeChange="loadLocaleMessages" />
+      <div class="container">
+        <router-view />
+      </div>
+      <Footer />
     </div>
-
-    <Footer />
-
   </div>
-
 </template>
 
 <script>
-
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import {
   setDocumentDirectionPerLocale,
-  setDocumentLang,
-  setDocumentTitle
+  setDocumentTitle,
+  setDocumentLang
 } from '@/util/i18n/document'
+import { loadLocaleMessagesAsync } from '@/i18n'
 
 export default {
-  name: 'App',
-  components: { Nav, Footer },
+  data: () => ({
+    isLoading: true
+  }),
   mounted () {
-    this.$watch(
-      '$i18n.locale',
-      (newLocale, oldLocale) => {
-        if (newLocale === oldLocale) {
-          return
-        }
-        setDocumentLang(newLocale)
-        setDocumentDirectionPerLocale(newLocale)
+    this.loadLocaleMessages(this.$i18n.locale)
+  },
+  methods: {
+    loadLocaleMessages (locale) {
+      this.isLoading = true
+      loadLocaleMessagesAsync(locale).then(() => {
+        setDocumentLang(locale)
+        setDocumentDirectionPerLocale(locale)
         setDocumentTitle(this.$t('app.title'))
-      },
-      { immediate: true }
-    )
-  }
+        this.isLoading = false
+      })
+    }
+  },
+  components: { Nav, Footer }
 }
-
 </script>
 
 <style>

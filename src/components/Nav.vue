@@ -11,11 +11,8 @@
 
     <div class="nav__end">
 
-      <p class="user-greeting">
-        {{ $t("nav.user_greeting", { name: "Ramon" }) }}&nbsp;
-      </p>
-
-      <LocaleSwitcher />
+      <p class="user-greeting">{{ $t("user_greeting", { name: "Adam" }) }}</p>
+      <LocaleSwitcher v-on:change="$emit('localeChange', $event)" />
 
     </div>
 
